@@ -1,0 +1,6 @@
+Inner class is used to enhance composition by hidng the implementation of some of the objects needed in
+the actual class e.g Gear inside a GearBox class.
+
+Local Class and Anonymous class mplementation showed in Button and Main class.
+Anonymous class is used when there is only one time usage of a class
+Local class is not really used but good to know about it

@@ -1,0 +1,20 @@
+Expression statement, Prefix,Postfix.
+sum = 5;
+sout(sum--) output 5
+sout(sum) output 4
+sout(--sum) output 3
+
+Boolean; isCreated = True;
+
+Static variable is created only once in memory and shared through the class
+Static method/variable belong to the class and NOT the instance of a class
+It makes sense to create a static method if class is using static variable so we can call the method directly
+
+Making a class final and making the constructor private (MATH class)
+
+Naming Convention
+------------------
+package name - reversed (org.w3c.dom)
+ClassName - noun
+variable -
+Type Parameters: E(element), K-key, T-Type, V-value, S,U,V - 2nd,3rd,4th

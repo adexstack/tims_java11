@@ -1,0 +1,26 @@
+Type Diffmerge in windows search and compare files,folders for differences
+Use Tools>Options>folder filter to configure files to ignore e.g .class file(compiled source code) or .idea.iml
+(intellij tracking source code changes). Also use reload to refresh Diffmerge
+
+javafx - C:\TimBuch\lib Configure projectstructure/global lib for the lib jars excluding src.jar
+For java 8, you dont need any setup as the above as it's by default
+
+Abstract classes can have member variable that can be inherited, interface cannot
+Interface can only have public static final member variables (constant), they have to be static as you can't instantiate
+non static method. Interface cannot have constructors.
+All methods in interface have to be public, Abstract methods can have any access modifier(public, private,protected,..).
+All methods in interface have to be abstract method, methods in Abstract class can have all types of methods
+
+Exception Handling
+--------------------
+LBYL - Leap Before You Leap
+EAFP - Easy To Ask for Forgiveness and Permission
+
+Lambda Expression (New in Java8)
+--------------------
+Easier way to work with interfaces(functional interface) that has only 1 method. Often used with anonymous class
+
+Java.IO vs Java.NIO
+---------------------
+Use io for streams, reading, writing files
+use nio for FileSystem
