@@ -15,9 +15,10 @@ public class Main {
     }
 
     private static ArrayList<Integer> arrBuild(){
-        ArrayList<Integer> items = new ArrayList<>();
+        ArrayList items = new ArrayList();
         items.add(1);
         items.add(2);
+        items.add("String here"); //runtime time error
         items.add(3);
         items.add(5);
         return items;

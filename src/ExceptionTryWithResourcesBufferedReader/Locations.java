@@ -24,12 +24,11 @@ public class Locations implements Map<Integer, Location> {
     }
 
     static {
-
         try(Scanner scanner = new Scanner(new BufferedReader(new FileReader("locations_big.txt")))) {
             scanner.useDelimiter(",");
             while(scanner.hasNextLine()) {
                 int loc = scanner.nextInt();
-                scanner.skip(scanner.delimiter());
+                scanner.skip(scanner.delimiter()); // skipping the commas
                 String description = scanner.nextLine();
                 System.out.println("Imported loc: " + loc + ": " + description);
                 Map<String, Integer> tempExit = new HashMap<>();

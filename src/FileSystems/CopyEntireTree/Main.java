@@ -15,16 +15,20 @@ public class Main {
 //                    }
 //                };
 
+        //Note 2022: DirectoryStream only gets the direct descendants folders and files
+        // The one line lambda below replaces the 4 lines above
+
         DirectoryStream.Filter<Path> filter = p -> Files.isRegularFile(p);
 
         Path directory = FileSystems.getDefault().getPath("FileTree" + File.separator + "Dir2");
 //        Path directory = FileSystems.getDefault().getPath("FileTree/Dir2");  // FileTree\\Dir2 (windows)
         try (DirectoryStream<Path> contents = Files.newDirectoryStream(directory, filter)) {
+            //(DirectoryStream<Path> contents = Files.newDirectoryStream(directory, "*.dat")) //using glob for filter
             for (Path file : contents) {
                 System.out.println(file.getFileName());
             }
 
-        } catch (IOException | DirectoryIteratorException e) {
+        } catch (IOException | DirectoryIteratorException e) { //using bitwise exclusive OR for multiple
             System.out.println(e.getMessage());
         }
 
@@ -33,6 +37,7 @@ public class Main {
         separator = FileSystems.getDefault().getSeparator();
         System.out.println(separator);
 
+        // creating temp file that the os doesn't want to keep
         try {
             Path tempFile = Files.createTempFile("myapp", ".appext");  // C:\Users\???\AppData\Local\Temp\myapp1797805585146820741.appext
             System.out.println("Temporary file path = " + tempFile.toAbsolutePath());

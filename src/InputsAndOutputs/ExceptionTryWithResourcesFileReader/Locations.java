@@ -11,7 +11,7 @@ import java.util.*;
 public class Locations implements Map<Integer, Location> {
     private static Map<Integer, Location> locations = new HashMap<Integer, Location>();
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException { //throwing IOException hence no need for tyr/catch
         try(FileWriter locFile = new FileWriter("locations.txt");
             FileWriter dirFile = new FileWriter("directions.txt")) {
             for(Location location : locations.values()) {
@@ -21,7 +21,7 @@ public class Locations implements Map<Integer, Location> {
                 }
             }
         }
-//        FileWriter locFile = null;
+//        FileWriter locFile = null;   creating FileWriter variable 1st so, it can be used by finally block.
 //        try {
 //            locFile = new FileWriter("locations.txt");
 //            for(Location location : locations.values()) {
@@ -39,12 +39,12 @@ public class Locations implements Map<Integer, Location> {
     static {
 // reading File using FileReader and scanner object to get the texts
         Scanner scanner = null;
-        try {
+        try { // FileReader is autoclose when scanner is closed as scanner closeable and also closes associated sources
             scanner = new Scanner(new FileReader("locations.txt"));
             scanner.useDelimiter(",");
             while(scanner.hasNextLine()) {
                 int loc = scanner.nextInt();
-                scanner.skip(scanner.delimiter());
+                scanner.skip(scanner.delimiter()); // skipping the commas
                 String description = scanner.nextLine();
                 System.out.println("Imported loc: " + loc + ": " + description);
                 Map<String, Integer> tempExit = new HashMap<>();

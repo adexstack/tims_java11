@@ -14,10 +14,12 @@ public class Main4FileAttributes {
     public static void main(String[] args) {
         try {
 
+            // create files and directory
 //            Path fileToCreate = FileSystems.getDefault().getPath("Examples", "file2.txt");
 //            Files.createFile(fileToCreate);
 //            Path dirToCreate = FileSystems.getDefault().getPath("Examples", "Dir4");
 //            Files.createDirectory(dirToCreate);
+            // Note: creating multiple depth directories using createDirectories();
 //            Path dirToCreate = FileSystems.getDefault().getPath("Examples", "Dir2/Dir3/Dir4/Dir5/Dir6");
 //            Path dirToCreate = FileSystems.getDefault().getPath("Examples", "Dir2\\Dir3\\Dir4\\Dir5\\Dir6");
 
@@ -25,6 +27,7 @@ public class Main4FileAttributes {
 ////            Path dirToCreate = FileSystems.getDefault().getPath("Examples\\Dir2\\Dir3\\Dir4\\Dir5\\Dir6\\Dir7");
 //            Files.createDirectories(dirToCreate);
 
+            // Getting files metadata
             Path filePath = FileSystems.getDefault().getPath("Examples", "Dir1/file1.txt");
 //            Path filePath = FileSystems.getDefault().getPath("Examples", "Dir1\\file1.txt");
             long size = Files.size(filePath);
@@ -32,6 +35,7 @@ public class Main4FileAttributes {
             System.out.println("Last modified =  " + Files.getLastModifiedTime(filePath));
 
 
+            //Note2022:  better using BasicFileAttributes interface that has all the basic set of attributes of file
             BasicFileAttributes attrs = Files.readAttributes(filePath, BasicFileAttributes.class);
             System.out.println("Size =  " + attrs.size());
             System.out.println("Last modified =  " + attrs.lastModifiedTime());

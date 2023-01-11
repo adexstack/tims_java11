@@ -13,8 +13,8 @@ public class Example {
         try {
             int result = divide();
             System.out.println(result);
-        } catch(ArithmeticException | NoSuchElementException e) {
-            System.out.println(e.toString());
+        } catch(ArithmeticException | NoSuchElementException e) { // catching multiple exceptions
+            System.out.println(e);
             System.out.println("Unable to perform division, autopilot shutting down");
         }
     }

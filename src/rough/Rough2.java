@@ -2,7 +2,6 @@ package rough;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Set;
 
 public class Rough2 {
     public static void main(String[] args) {
@@ -15,9 +14,9 @@ public class Rough2 {
         map1.put("Lin","Seth");
         map1.put("Pet","Dan");
 
-        Set<String> keys = map1.keySet();
+        //Set<String> keys = map1.keySet();
 
-        for(String key:keys){
+        for(String key:map1.keySet()){
             System.out.println(key+ " : "+map1.get(key));
         }
 

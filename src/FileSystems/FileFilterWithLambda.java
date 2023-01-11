@@ -17,12 +17,17 @@ public class FileFilterWithLambda {
         //(Optimized) -> Using this one line Lambda Expression replaces all 4 lines above
         //isRegularFile would only print out files and not directory
         // read up Globs
-        DirectoryStream.Filter<Path> filter = p -> Files.isRegularFile(p);
+        DirectoryStream.Filter<Path> filterDir = Files::isDirectory;
+        //DirectoryStream.Filter<Path> filterRegFile = p -> Files.isRegularFile(p);  //using lambda
+        DirectoryStream.Filter<Path> filterRegFile = Files::isRegularFile; //replacing the lambda above with method reference
+
 
         Path directory = FileSystems.getDefault().getPath("FileTree/Dir2");  // FileTree\\Dir2 (windows)
-        try (DirectoryStream<Path> contents = Files.newDirectoryStream(directory, filter)) {
+        try (DirectoryStream<Path> contents = Files.newDirectoryStream(directory, filterRegFile)) {
             for (Path file : contents) {
                 System.out.println(file.getFileName());
+                System.out.println(file.getFileName().toAbsolutePath());
+                System.out.println(file.toAbsolutePath());
             }
 
         } catch (IOException | DirectoryIteratorException e) {

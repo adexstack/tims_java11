@@ -54,7 +54,7 @@ public class StreamUsage {
          Stream.concat(Arrays.stream(lisNo1), Arrays.stream(lisNo2)).forEach(s -> System.out.println(s));
          */
 
-       // When I don't need nothing  but just want a returned boolean to assert
+       // When I don't need anything  but just want a returned boolean to assert
          /*
          Boolean flag = Stream.of(lis).anyMatch(s -> s.equalsIgnoreCase("Seyi"));
         System.out.println(flag);
@@ -64,14 +64,17 @@ public class StreamUsage {
         //Could also convert to map, set e.t.c
         List<Integer>nums = Arrays.asList(3,2,2,4,5,1,8,7);
 
+        //List<Integer>numsNew = nums.stream().sorted().collect(Collectors.toList()); //not distincting
+        //sorting after distincting the list
         List<Integer>numsNew = nums.stream().distinct().sorted().collect(Collectors.toList());
+        System.out.println(numsNew);
         System.out.println(numsNew.get(2));
 
 
     }
     public static void streamMet(List<String> lis){
 
-        Stream.of(lis).forEach(s -> System.out.println(s));
+        Stream.of(lis).forEach(System.out::println);
 
     }
 }

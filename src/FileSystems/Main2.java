@@ -10,6 +10,7 @@ public class Main2 {
     public static void main(String[] args) {
         try {
             Path sourceFile = FileSystems.getDefault().getPath("Examples", "file1.txt");
+
             Path copyFile = FileSystems.getDefault().getPath("Examples", "file1copy.txt");
             Files.copy(sourceFile, copyFile);
         } catch(IOException e) {

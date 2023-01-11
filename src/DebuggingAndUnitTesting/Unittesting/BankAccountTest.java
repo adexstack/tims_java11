@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
-Note : Every test must be self cantained (Each method should execute a test without depending on another method)
+Note : Every test must be self-contained (Each method should execute a test without depending on another method)
  Also, the test name should be detailed about what the test is doing
  Adding delta "0" is to ensure
 */
