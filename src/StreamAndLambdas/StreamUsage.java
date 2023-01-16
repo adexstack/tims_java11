@@ -39,9 +39,8 @@ public class StreamUsage {
          */
 
         // Filtering and sorting
-        /*
-        Stream.of(lis).filter(s -> s.startsWith("A")).sorted().forEach(s -> System.out.println(s));
-        */
+
+        Stream.of(lis).filter(s -> s.startsWith("A")).sorted().forEach(System.out::println);
 
         // Using the streamMet method below here
        /*
@@ -70,11 +69,19 @@ public class StreamUsage {
         System.out.println(numsNew);
         System.out.println(numsNew.get(2));
 
+        streamMet(Arrays.asList("fem","tab","dan","ken"));
+
+        String [] lisNames = {"fem","tab","dan","ken"};
+        streamMet(Arrays.asList(lisNames));
+
+
 
     }
     public static void streamMet(List<String> lis){
 
+        System.out.println("---streamMet----");
         Stream.of(lis).forEach(System.out::println);
+
 
     }
 }
